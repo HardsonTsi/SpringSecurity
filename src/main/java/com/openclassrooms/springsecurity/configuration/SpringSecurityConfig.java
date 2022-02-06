@@ -21,6 +21,8 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
                 .withUser("springadmin").password(passwordEncoder().encode("admin123")).roles("ADMIN");
     }
 
+
+    //Chaine de filtre
     @Override
     public void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
