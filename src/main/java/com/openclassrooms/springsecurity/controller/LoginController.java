@@ -18,18 +18,19 @@ public class LoginController {
 
     @RequestMapping("/**")
     @RolesAllowed("USER")
-    public String getUsers(){
+    public String getUsers() {
         return "Welcome User";
     }
 
     @RequestMapping("/admin")
     @RolesAllowed("ADMIN")
-    public String getAdmin(){
+    public String getAdmin() {
         return "Welcome Admin";
     }
 
     @RequestMapping("/*")
-    public String getGithub(Principal user){
+    public String getUser(Principal user) {
         return user.toString();
     }
+
 }
